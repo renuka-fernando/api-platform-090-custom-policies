@@ -1,0 +1,19 @@
+apiVersion: gateway.api-platform.wso2.com/v1alpha1
+kind: RestApi
+metadata:
+  name: users-api-v1.0
+spec:
+  displayName: Users-API
+  version: v1.0
+  context: /users/$version
+  upstream:
+    main:
+      url: http://httpbin.org/anything
+  operations:
+    - method: GET
+      path: users
+      policies:
+        - name: transform-payload-case
+          version: v1
+          params:
+            targetCase: uppercase

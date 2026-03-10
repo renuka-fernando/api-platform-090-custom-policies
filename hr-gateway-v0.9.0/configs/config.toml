@@ -1,0 +1,24 @@
+[analytics]
+enabled = true
+allow_payloads = false
+enabled_publishers = ["moesif"]
+
+[analytics.publishers.moesif]
+application_id = "<MOESIF_APPLICATION_ID>"
+
+[router]
+gateway_host = "*"
+
+[router.access_logs]
+enabled = true
+
+[controller.server]
+gateway_id = "platform-gateway-id"
+
+[controller.auth.basic]
+enabled = true
+
+[[controller.auth.basic.users]]
+username = "admin"
+password = "admin"
+roles = ["admin"]
