@@ -10,8 +10,8 @@ spec:
     main:
       url: http://httpbin.org/anything
   operations:
-    - method: GET
-      path: users
+    - method: POST
+      path: /users
       policies:
         - name: transform-payload-case
           version: v1

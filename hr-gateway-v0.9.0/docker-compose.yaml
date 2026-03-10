@@ -18,7 +18,7 @@
 
 services:
   gateway-controller:
-    image: ghcr.io/wso2/api-platform/gateway-controller:0.9.0
+    image: ghcr.io/wso2/api-platform/hr-gateway-gateway-controller:0.9.0
     mem_limit: 128m
     mem_reservation: 128m
     cpus: 0.1
@@ -47,7 +47,7 @@ services:
       - gateway-network
 
   gateway-runtime:
-    image: ghcr.io/wso2/api-platform/gateway-runtime:0.9.0
+    image: ghcr.io/wso2/api-platform/hr-gateway-gateway-runtime:0.9.0
     mem_limit: 384m
     mem_reservation: 384m
     cpus: 0.4

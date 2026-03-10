@@ -89,6 +89,24 @@ docker compose up -d
 ### 5. Deploy the API
 
 ```bash
-ap api deploy --file users-api.yaml
+curl -X POST http://localhost:9090/apis -u 'admin:admin' \
+  -H "Content-Type: application/yaml" \
+  --data-binary @users-api.yaml
+```
+
+### 6. Invoke the API
+
+```bash
+curl curl http://localhost:8080/users/v1.0/users -H 'Content-Type: text/plain' -d 'hello world, Here is my message!!!'
+```
+
+The response body will be transformed to uppercase by the `transform-payload-case` policy:
+
+```json
+{
+  ...
+  "data": "HELLO WORLD, HERE IS MY MESSAGE!!!",
+  ...
+}
 ```
 
